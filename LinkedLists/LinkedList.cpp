@@ -54,6 +54,7 @@ Node * LinkedList::search(string val){
         if(ptr->val == val){
             return ptr;
         }
+        ptr = ptr->next;
     }
     return 0;
 }

@@ -35,5 +35,4 @@ int main(){
     ll.print();
     cout << endl << "Ans = " << returnKthToLast(ll,k) << endl;
     return 0;
-    return 0;
 }
