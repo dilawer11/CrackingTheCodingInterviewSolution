@@ -19,5 +19,6 @@ class LinkedList{
         Node * search(string);
         void print();
         int getLength();
+        Node * getHead();
 };
 #endif

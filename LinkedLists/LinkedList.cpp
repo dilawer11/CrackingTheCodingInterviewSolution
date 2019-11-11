@@ -67,3 +67,6 @@ void LinkedList::print(){
 int LinkedList::getLength(){
     return length;
 }
+Node * LinkedList::getHead(){
+    return head;
+}
