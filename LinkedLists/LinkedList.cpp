@@ -3,6 +3,7 @@ using namespace std;
 LinkedList::LinkedList(){
     head = 0;
     tail = 0;
+    length = 0;
 }
 void LinkedList::insert(string val){
     if(!head){
