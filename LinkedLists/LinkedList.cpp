@@ -1,19 +1,21 @@
 #include "LinkedList.h"
 using namespace std;
-LinkedList::LinkedList(){
+template<class T>
+LinkedList<T>::LinkedList(){
     head = 0;
     tail = 0;
     length = 0;
 }
-void LinkedList::insert(string val){
+template<class T>
+void LinkedList<T>::insert(T val){
     if(!head){
-        head = new Node;
+        head = new Node<T>;
         head->val = val;
         head->next = 0;
         head->prev = 0;
         tail = head;
     }else{
-        Node * newNode = new Node;
+        Node<T> * newNode = new Node<T>;
         tail->next = newNode;
         newNode->val = val;
         newNode->next = 0;
@@ -22,7 +24,8 @@ void LinkedList::insert(string val){
     }
     length++;
 }
-void LinkedList::del(Node * ptr){
+template<class T>
+void LinkedList<T>::del(Node<T> * ptr){
     if(ptr){
         if(ptr == head){
             head = ptr->next;
@@ -38,8 +41,8 @@ void LinkedList::del(Node * ptr){
             delete ptr;
         }
         else{
-            Node * prev = ptr->prev;
-            Node * next = ptr->next;
+            Node<T> * prev = ptr->prev;
+            Node<T> * next = ptr->next;
             prev->next = next;
             next->prev = prev; 
             delete ptr;
@@ -48,8 +51,9 @@ void LinkedList::del(Node * ptr){
     }
     return;
 }
-Node * LinkedList::search(string val){
-    Node * ptr = head;
+template<class T>
+Node<T> * LinkedList<T>::search(T val){
+    Node<T> * ptr = head;
     while(ptr){
         if(ptr->val == val){
             return ptr;
@@ -58,17 +62,20 @@ Node * LinkedList::search(string val){
     }
     return 0;
 }
-void LinkedList::print(){
-    Node * ptr = head;
+template<class T>
+void LinkedList<T>::print(){
+    Node<T> * ptr = head;
     while(ptr){
         cout << "Val = " << ptr->val  << " Next=" << ptr->next << " Prev=" << ptr->prev << endl;
         ptr = ptr->next;
     }
     return;
 }
-int LinkedList::getLength(){
+template<class T>
+int LinkedList<T>::getLength(){
     return length;
 }
-Node * LinkedList::getHead(){
+template<class T>
+Node<T> * LinkedList<T>::getHead(){
     return head;
 }

@@ -4,8 +4,8 @@
 using namespace std;
 
 // Although LinkedList.cpp is doubly linked list I will use it in this problem as singly
-string returnKthToLast(LinkedList ll, int k){
-    Node * ptr = ll.getHead();
+string returnKthToLast(LinkedList<string> ll, int k){
+    Node<string> * ptr = ll.getHead();
     int length = ll.getLength(); //If length is not being stored you can just to another linear scan to find the length in O(n) time
     int loop = length - k;
     if(loop <= 0 || k <= 0){
@@ -21,7 +21,7 @@ string returnKthToLast(LinkedList ll, int k){
 int main(){
     cout << "Return Kth to Last" << endl;
     int n, k;
-    LinkedList ll;
+    LinkedList<string> ll;
     cout << "Enter Initial Elements For Linked List: ";
     cin >> n;
     for(int i = 0; i < n; i++){

@@ -2,10 +2,10 @@
 #include "LinkedList.cpp"
 
 using namespace std;
-void deleteMiddleNode(Node * ptr){
+void deleteMiddleNode(Node<string> * ptr){
     if(ptr){
     ptr-> val = ptr->next->val;
-    Node * nextPtr = ptr->next->next;
+    Node<string> * nextPtr = ptr->next->next;
     delete ptr->next;
     ptr->next = nextPtr;
     }
@@ -15,7 +15,7 @@ int main(){
     cout << "Delete Middle Node" << endl;
     int n;
     string val;
-    LinkedList ll;
+    LinkedList<string> ll;
     cout << "Enter Initial Elements For Linked List: ";
     cin >> n;
     for(int i = 0; i < n; i++){

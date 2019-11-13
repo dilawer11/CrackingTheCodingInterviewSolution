@@ -3,11 +3,11 @@
 #include "LinkedList.cpp"
 
 using namespace std;
-void removeDupsSpace(LinkedList ll){
+void removeDupsSpace(LinkedList<string> ll){
     unordered_set <string> hashTable;
-    Node * ptr = ll.getHead();
+    Node<string> * ptr = ll.getHead();
     while(ptr){
-        Node * nextPtr = ptr->next;
+        Node<string> * nextPtr = ptr->next;
         if(hashTable.find(ptr->val) == hashTable.end()){
             hashTable.insert(ptr->val);
         } else{
@@ -17,14 +17,14 @@ void removeDupsSpace(LinkedList ll){
     }
     return;
 }
-void removeDupsNoSpace(LinkedList ll){
-    Node * ptr1;
-    Node * ptr2;
+void removeDupsNoSpace(LinkedList<string> ll){
+    Node<string> * ptr1;
+    Node<string> * ptr2;
     ptr1 = ll.getHead();
     while(ptr1){
         ptr2 = ptr1->next;
         while(ptr2){
-            Node * nextPtr = ptr2->next;
+            Node<string> * nextPtr = ptr2->next;
             if(ptr1->val == ptr2->val){
                 ll.del(ptr2);
             }
@@ -37,7 +37,7 @@ void removeDupsNoSpace(LinkedList ll){
 int main(){
     cout << "Remove Dups" << endl;
     int n, s;
-    LinkedList ll;
+    LinkedList<string> ll;
     cout << "Enter Initial Elements For Linked List: ";
     cin >> n;
     cout << "Space(1) or NoSpace(0): " << endl;
